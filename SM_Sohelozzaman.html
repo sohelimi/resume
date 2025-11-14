@@ -1,0 +1,561 @@
+<!-- Chosen Palette: Clean, Professional, High-Contrast (White/Black/Blue) -->
+<!-- Key Enhancements:
+1. Increased font sizes for titles and key metrics.
+2. Use of Lucide icons (via inline SVG) for visual appeal and scannability.
+3. Stronger contrast in the layout for better visual flow.
+4. Aggressive bolding of keywords (AI/ML, Forecasting, Python, Billions) across all tabs.
+5. New "Development" tab structure for better presentation of training and memberships.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SM Sohelozzaman - Senior Leadership Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; }
+        .active-tab { 
+            background-color: #e5f0ff; /* Light Blue Background */
+            border-bottom: 3px solid #3b82f6; /* Strong Blue Accent */
+            color: #1f2937; /* Dark text */
+            font-weight: 700;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item.active {
+            background-color: #eff6ff; /* Blue-50 */
+            border-left-color: #2563eb; /* Blue-700 */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        /* Style for the detail panel's bullet points */
+        #detail-bullets li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        #detail-bullets li::before {
+            content: '•';
+            color: #3b82f6; /* Blue bullet */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .chart-container { height: 300px; }
+            .header-info { text-align: left; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-4 md:p-8">
+    <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+        
+        <!-- Header & Contact Bar -->
+        <header class="bg-gray-800 text-white p-6 flex flex-col md:flex-row justify-between items-start md:items-center rounded-t-2xl">
+            <div class="mb-4 md:mb-0">
+                <h1 class="text-4xl font-extrabold tracking-tight">SM SOHELOZZAMAN</h1>
+                <p class="text-xl font-medium text-blue-400 mt-1">Sr. **Forecasting, AI/ML** & Technology Leader</p>
+            </div>
+            <div class="header-info text-sm space-y-1 md:text-right">
+                <p class="flex items-center justify-start md:justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2 text-blue-300"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <a href="mailto:sohel@ieee.org" class="hover:text-blue-200">sohel@ieee.org</a>
+                </p>
+                <p class="flex items-center justify-start md:justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-2 text-blue-300"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.34-2.18m.6-6.19c.18-.32.4-.64.64-.95a12.87 12.87 0 0 1 10.15-2.83 1.99 1.99 0 0 1 2.68.75l.98 1.7a2 2 0 0 1-.72 2.82l-1.9 1.48"/></svg>
+                    (650) 804-8140
+                </p>
+                <p class="flex items-center justify-start md:justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin mr-2 text-blue-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    <a href="https://www.linkedin.com/in/sm-sohelozzaman/" target="_blank" class="text-blue-300 hover:text-blue-100 font-medium">LinkedIn Profile</a>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="p-6">
+            
+            <!-- Navigation Tabs -->
+            <nav class="flex border-b border-gray-300 mb-6 sticky top-0 bg-white z-10 rounded-t-lg shadow-sm">
+                <button data-tab="overview" class="tab-button active-tab flex-1 px-4 py-3 text-sm transition duration-150 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Overview & Skills
+                </button>
+                <button data-tab="impact" class="tab-button flex-1 px-4 py-3 text-sm transition duration-150 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up mr-2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    Quantified Impact
+                </button>
+                <button data-tab="timeline" class="tab-button flex-1 px-4 py-3 text-sm transition duration-150 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history mr-2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.79 2.91L2 12"/><path d="M12 7v5l4 2"/></svg>
+                    Career Timeline
+                </button>
+                <button data-tab="development" class="tab-button flex-1 px-4 py-3 text-sm transition duration-150 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap mr-2"><path d="M22 10v6M22 10l-6.5-6.5M22 10H16.5M15 5.5l-2-2M10.5 4.5l-2 2M15 10.5l-2-2M10.5 15.5l-2-2M12 19c-3.3 0-6-1.5-6-4.5s2.7-4.5 6-4.5 6 1.5 6 4.5S15.3 19 12 19z"/></svg>
+                    Education & Development
+                </button>
+            </nav>
+
+            <!-- 1. Overview & Skills Tab -->
+            <div id="overview" class="tab-content block">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Executive Summary -->
+                    <div class="lg:col-span-2">
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check mr-2 text-blue-600"><path d="M20 13V5.5L12 2 4 5.5V13c0 5.5 8 7 8 7s8-1.5 8-7z"/><path d="m9 12 2 2 4-4"/></svg>
+                            Executive Summary
+                        </h2>
+                        <div class="p-6 bg-blue-50 rounded-xl shadow-lg text-lg space-y-4 border-l-4 border-blue-600">
+                            <p><strong>Strategic Technology and Analytics Leader</strong> with **15+ years** specializing in driving impactful product development via **Forecasting, Predictive Modeling, and AI/ML Strategy**.</p>
+                            <p>Proven ability to **own and deliver complex product/device forecasts**—integrating advanced **Machine Learning** models (**LSTM, ARIMA, Prophet**) to achieve long-range predictability and optimize multi-**billion dollar** capital expenditure (**>$2 Billion** CAPEX oversight).</p>
+                            <p>Expert in **Python, SQL, SAS, Azure, Databricks, Tableau, and Power BI**. Strong foundation demonstrated by an MBA and ongoing MSc in **Artificial Intelligence**.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Competency Radar -->
+                    <div class="lg:col-span-1">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Competency Profile</h3>
+                        <div class="chart-container h-[350px]">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Skills Snapshot -->
+                <div class="mt-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-square mr-2 text-blue-600"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 13-2 2 2 2"/><path d="m14 13 2 2-2 2"/></svg>
+                        Technical Core & Platforms
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                            <h4 class="font-semibold text-lg text-blue-700 mb-1">Modeling & Algorithms</h4>
+                            <p class="text-sm text-gray-700">Predictive Modeling, Time-Series Analysis (**LSTM, ARIMA, Prophet**), **AI/ML**, Statistical Methods, Forecasting Accuracy.</p>
+                        </div>
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                            <h4 class="font-semibold text-lg text-blue-700 mb-1">Data & Cloud</h4>
+                            <p class="text-sm text-gray-700">**Python** (Pandas, Scikit-learn), **SQL, SAS**, Azure, **Snowflake, Databricks**, Teradata, Alteryx.</p>
+                        </div>
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                            <h4 class="font-semibold text-lg text-blue-700 mb-1">Visualization & Domain</h4>
+                            <p class="text-sm text-gray-700">**Tableau, Power BI**, MS SQL Server, **5G, LTE, RF Engineering**, Embedded Systems (**Automotive**).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Quantified Impact Tab -->
+            <div id="impact" class="tab-content">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b pb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign mr-2 text-blue-600"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Quantified Business Impact & Scale
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-700">Scale of Financial and Deployment Influence</h3>
+                        <div class="chart-container h-[450px]">
+                            <canvas id="impactChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600 p-3 bg-gray-50 rounded-lg">The projects visualized represent strategic oversight and direct influence on capital planning, spanning from multi-billion dollar CAPEX decisions to tangible cost savings.</p>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="p-5 bg-blue-100 rounded-xl shadow-md">
+                            <p class="text-2xl font-extrabold text-blue-800">>$2 BILLION</p>
+                            <p class="text-lg font-medium text-gray-700">Annual CAPEX and Deployment Budget Oversight</p>
+                            <p class="text-sm text-gray-600 mt-1">Managed network deployment budget and forecast alignment across 14 markets.</p>
+                        </div>
+                        <div class="p-5 bg-blue-100 rounded-xl shadow-md">
+                            <p class="text-2xl font-extrabold text-blue-800">750 MILLION</p>
+                            <p class="text-lg font-medium text-gray-700">Population (POP) Traffic Base Analyzed</p>
+                            <p class="text-sm text-gray-600 mt-1">Developed and optimized forecasting models for T-Mobile's vast user base.</p>
+                        </div>
+                        <div class="p-5 bg-blue-100 rounded-xl shadow-md">
+                            <p class="text-2xl font-extrabold text-blue-800">$7.5 MILLION</p>
+                            <p class="text-lg font-medium text-gray-700">Direct Cost Savings Achieved</p>
+                            <p class="text-sm text-gray-600 mt-1">Realized by validating vendor Bill of Materials (BOM) and correcting erroneous equipment orders.</p>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 border-t pt-4 mt-6">Innovation & Patents</h3>
+                        <div class="space-y-3">
+                            <p class="text-sm">**Pending Application:** Invented a novel method for **Capacity Calculation** of a site based on RRCU and available Spectrum (Patent Application No. 18/900,347).</p>
+                            <p class="text-sm">**Published Patent:** Co-invented a "Wireless communication network including linear front-to-back small cell configurations" (Pub. No.: US 2019/0116503 A1).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Career Timeline Tab -->
+            <div id="timeline" class="tab-content">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b pb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket mr-2 text-blue-600"><path d="M11 20H8v-3.5L3 17l6-6 6-6 4 4-5.5 5.5H19v3h-5.5L14 16z"/><path d="m18 13-4 4"/></svg>
+                    Career Progression and Key Achievements
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Timeline List (Left Column) -->
+                    <div class="lg:col-span-1 space-y-4">
+                        <template id="timeline-item-template">
+                            <div class="timeline-item p-4 bg-white rounded-xl shadow cursor-pointer hover:bg-blue-50 transition duration-150 border-l-4 border-gray-300 data-role-id="" data-is-active="false">
+                                <p class="text-xs text-gray-500 timeline-dates"></p>
+                                <p class="font-bold text-lg timeline-title"></p>
+                                <p class="text-sm text-blue-600 timeline-company"></p>
+                            </div>
+                        </template>
+                        <div id="timeline-list" class="space-y-4">
+                            <!-- Timeline items populated here by JS -->
+                        </div>
+                    </div>
+                    
+                    <!-- Detail Panel (Right Column) -->
+                    <div class="lg:col-span-2">
+                        <div id="role-details" class="p-8 bg-white rounded-xl shadow-xl min-h-[500px] border-t-8 border-blue-600">
+                            <h3 id="detail-title" class="text-2xl font-extrabold text-gray-800 mb-1">Select a Role on the Left</h3>
+                            <p id="detail-company" class="text-lg text-blue-600 mb-1"></p>
+                            <p id="detail-dates" class="text-sm text-gray-500 mb-6"></p>
+                            
+                            <!-- Summary is intentionally left blank for a clean look unless needed -->
+                            <ul id="detail-bullets" class="ml-0 space-y-3 text-gray-700 text-base">
+                                <!-- Details populated here by JS -->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- 4. Education & Development Tab (New Structure) -->
+            <div id="development" class="tab-content">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b pb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop-2 mr-2 text-blue-600"><rect width="20" height="14" x="2" y="4" rx="2"/><path d="M22 19H2"/></svg>
+                    Advanced Education and Professional Development
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Column 1: Academic Background -->
+                    <div class="p-6 bg-gray-100 rounded-xl shadow-md space-y-4 border-t-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-check mr-2 text-blue-600"><path d="M8 20.3L2 17V3L8 6v14.3"/><path d="M16 20.3V17l6-3V7l-6 3V20.3"/><path d="M12 21.5V6"/><path d="m14 11 2 2 4-4"/></svg>
+                            Academic Degrees
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li>**MSc, Artificial Intelligence** | University of Texas at Austin (On Going)</li>
+                            <li>**MBA** | University of Illinois at Urbana-Champagne</li>
+                            <li>**MSc, Information Technology** (Telecommunication) | University of Stuttgart, Germany</li>
+                            <li>**BSc, Electrical and Electronic Engineering** | BUET, Bangladesh</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2: Certifications & Memberships -->
+                    <div class="p-6 bg-gray-100 rounded-xl shadow-md space-y-4 border-t-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award mr-2 text-blue-600"><path d="m12 15-3.5-3.5"/><path d="m12 15 3.5-3.5"/><path d="M19 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2z"/></svg>
+                            Certifications & Affiliations
+                        </h3>
+                        <p class="font-semibold text-blue-700">Agile Certifications:</p>
+                        <ul class="list-disc ml-5 space-y-1 text-sm">
+                            <li>**CSPO** Certified Scrum Product Owner</li>
+                            <li>**CSM** Certified Scrum Master</li>
+                        </ul>
+                        <p class="font-semibold text-blue-700 mt-3">Professional Memberships:</p>
+                        <ul class="list-disc ml-5 space-y-1 text-sm">
+                            <li>Senior Member, **IEEE** (Institute of Electrical and Electronics Engineers)</li>
+                            <li>Associate Member, IEB (Institute of Engineers, Bangladesh)</li>
+                        </ul>
+                        <p class="font-semibold text-blue-700 mt-3">Specializations:</p>
+                        <ul class="list-disc ml-5 space-y-1 text-sm">
+                            <li>Business Analytics Specialization (UIUC)</li>
+                            <li>Strategic Leadership & Management Specialization (UIUC)</li>
+                            <li>**GOOGLE Cloud Digital Leader** (Coursera)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Technical Training & Activities -->
+                    <div class="p-6 bg-gray-100 rounded-xl shadow-md space-y-4 border-t-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu mr-2 text-blue-600"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                            Technical Training & Engagement
+                        </h3>
+                        <p class="font-semibold text-blue-700">Specialized Technical Courses:</p>
+                        <ul class="list-disc ml-5 space-y-1 text-sm max-h-56 overflow-y-auto pr-2">
+                            <li>Mastering **LTE** Air Interface (AT&T)</li>
+                            <li>**LTE** Protocol and Procedure (**Ericsson**)</li>
+                            <li>HSPA Protocols and Signalling (AT&T)</li>
+                            <li>**WCDMA** RF Optimization (AT&T)</li>
+                            <li>**Monte Carlo Simulation** (AT&T)</li>
+                            <li>Traffic load in Atoll (**Voice & Data**) (AT&T)</li>
+                            <li>Training on Radio Planning (Teleplan, Norway)</li>
+                            <li>Training on field computation software **FEKO** (Stuttgart, Germany)</li>
+                            <li>Training on **Actix Analyzer** and Spotlight (**T-Mobile**)</li>
+                        </ul>
+
+                        <p class="font-semibold text-blue-700 mt-4 border-t pt-3">Extracurricular / Community:</p>
+                        <ul class="list-disc ml-5 space-y-1 text-sm">
+                            <li>Moderator, Bangladeshi Student Association (BSA), Germany</li>
+                            <li>Founder and Vice President, BUET Photographic Society</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // --- Data Definitions ---
+        const RADAR_SCORES = {
+            labels: ['Forecasting/ML Depth', 'Technical Stack', 'Quant. Foundation', 'Strategic Leadership', 'Business Impact', 'Domain Expertise'],
+            data: [5, 4.5, 4, 4.5, 5, 4]
+        };
+
+        const IMPACT_DATA = {
+            labels: ['Budget & Deployment Scale', 'Users Analyzed (POPs)', 'Cost Savings Achieved', 'Sites Deployed/Validated'],
+            values: [2000000000, 750000000, 7500000, 10000] // Values: $2B, 750M, $7.5M, 10K
+        };
+
+        const CAREER_DATA = [
+            {
+                id: 'tmobile-ds',
+                title: 'Sr. Data Scientist, RF, RAN Capacity and NIBI',
+                company: 'T-Mobile USA',
+                dates: '11/2016 — Present',
+                bullets: [
+                    '**Forecasting & Modeling:** Developed a **multi-model customer forecasting solution** leveraging **Python** (**LSTM, ARIMA, Prophet**) to predict traffic growth and behavioral trends for a **750 million POP** user base, informing network planning.',
+                    '**Strategic Forecasting:** Created and managed the **handset forecasting model** used to determine the strategic **LTE network shutdown timeframe**, guiding executive decisions on device migration and spectrum refarming.',
+                    '**ML Optimization:** Engineered a **predictive congestion model** using **Machine Learning** algorithms to forecast future **LTE/5G** network bottlenecks, enabling proactive capacity planning.',
+                    '**Budget Leadership:** Collaborated across 14 markets to deploy **>10,000 small cells** within a **$2 Billion budget**, ensuring forecast alignment with physical network build-out timelines.',
+                    '**Innovation:** Invented a novel method for **Capacity Calculation** of a site (Patent Application No. 18/900,347).'
+                ]
+            },
+            {
+                id: 'tmobile-consultant',
+                title: 'Sr. Consultant, RF and Data Science',
+                company: 'T-Mobile USA',
+                dates: '04/2012 — 10/2016',
+                bullets: [
+                    '**Cost Savings:** Validated the Bill of Materials (BOM) submitted to vendors, resulting in direct cost savings of **$7.5 million USD** by identifying and correcting erroneous equipment orders.',
+                    '**KPI Development:** Developed a **real-time KPI monitoring tool** that integrated data from multiple platforms, visually displaying daily, monthly, and weekly KPI trends for RF engineers.',
+                    '**Network Performance:** Conducted detailed pre-launch and post-launch analysis of **LTE** drive data and monitored high-level KPIs for the West Region modernization project.',
+                    '**Data Tool Management:** Designed and maintained the RFDS (Radio Frequency Design Specifications) tool, ensuring accurate data validation and standardization for **10,000 network sites**.'
+                ]
+            },
+            {
+                id: 'delta-tech',
+                title: 'CTO and Co-Founder',
+                company: 'Delta Tech LLC, Delware, USA',
+                dates: '01/2005 — 04/2012',
+                bullets: [
+                    '**Technical Leadership:** Led an organization of **30 professionals**, providing end-to-end solutions and consultation for the wireless industry in Bangladesh, USA, and Canada.',
+                    '**RF Oversight:** Directed network planning, design, and optimization efforts, ensuring all new site build (NSB) sites met Key Performance Indicators (**KPIs**) prior to launch.',
+                    '**Mentoring:** Conducted training sessions for design engineers on various RF tools (**Atoll, OSS, ACP, and Mapinfo**).'
+                ]
+            },
+            {
+                id: 'daimler-benz',
+                title: 'Software Engineer, System Design',
+                company: 'Daimler Benz, Palo Alto, USA & Stuttgart, Germany',
+                dates: '05/2001 — 04/2005',
+                bullets: [
+                    '**AR Product Development:** Key role in the design and development of a **Lane Level Map for Augmented Reality** project, utilizing high-precision GPS for in-vehicle navigation.',
+                    '**Embedded Systems:** Spearheaded the development of a **Remote Measurement and Calibration System** for Hybrid Electric Vehicles, using an **embedded system** for wireless communication.',
+                    '**CAN Bus Controller:** Contributed to the development of **On-Board Touch Screen Controllers** for the hybrid A-Class and M-Series SUV, utilizing the **CAN bus system**.'
+                ]
+            }
+        ];
+
+        let radarChart = null;
+        let impactChart = null;
+        let currentActiveRole = null;
+
+        // --- Chart Initialization ---
+
+        function initRadarChart() {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            if (radarChart) radarChart.destroy();
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: RADAR_SCORES.labels,
+                    datasets: [{
+                        label: 'Competency Score (Scale 1-5)',
+                        data: RADAR_SCORES.data,
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        pointBackgroundColor: 'rgba(29, 78, 216, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e5e7eb' },
+                            grid: { color: '#e5e7eb' },
+                            pointLabels: { font: { size: 12, weight: 'bold' } },
+                            suggestedMin: 1,
+                            suggestedMax: 5
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function initImpactChart() {
+            const ctx = document.getElementById('impactChart').getContext('2d');
+            if (impactChart) impactChart.destroy();
+            impactChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: IMPACT_DATA.labels,
+                    datasets: [{
+                        label: 'Magnitude of Impact',
+                        data: IMPACT_DATA.values,
+                        backgroundColor: [
+                            '#2563eb', /* Blue-700 */
+                            '#10b981', /* Emerald */
+                            '#f59e0b', /* Amber */
+                            '#6366f1'  /* Indigo */
+                        ],
+                        borderColor: '#1e3a8a',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            type: 'logarithmic',
+                            title: { display: true, text: 'Value (Logarithmic Scale)', font: { size: 14, weight: 'bold' } },
+                            ticks: {
+                                callback: function(value) {
+                                    if (value >= 1e9) return '$' + (value / 1e9) + 'B';
+                                    if (value >= 1e6) return '$' + (value / 1e6) + 'M';
+                                    if (value >= 1e3) return (value / 1e3) + 'K';
+                                    return value;
+                                }
+                            }
+                        },
+                        y: { grid: { display: false } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        // --- Timeline Interaction Logic ---
+
+        function initTimeline() {
+            const timelineList = document.getElementById('timeline-list');
+            const template = document.getElementById('timeline-item-template');
+            timelineList.innerHTML = '';
+
+            CAREER_DATA.forEach(role => {
+                const clone = template.content.cloneNode(true);
+                const itemDiv = clone.querySelector('.timeline-item');
+                itemDiv.setAttribute('data-role-id', role.id);
+                itemDiv.querySelector('.timeline-dates').textContent = role.dates;
+                itemDiv.querySelector('.timeline-title').textContent = role.title;
+                itemDiv.querySelector('.timeline-company').textContent = role.company;
+                
+                itemDiv.addEventListener('click', () => showRoleDetails(role.id));
+                timelineList.appendChild(clone);
+            });
+
+            // Auto-select the most recent role on load
+            if (CAREER_DATA.length > 0) {
+                showRoleDetails(CAREER_DATA[0].id);
+            }
+        }
+
+        function showRoleDetails(roleId) {
+            const role = CAREER_DATA.find(r => r.id === roleId);
+            if (!role) return;
+
+            // Update Detail Panel
+            document.getElementById('detail-title').innerHTML = role.title;
+            document.getElementById('detail-company').textContent = role.company;
+            document.getElementById('detail-dates').textContent = role.dates;
+            
+            const bulletList = document.getElementById('detail-bullets');
+            bulletList.innerHTML = '';
+            role.bullets.forEach(bullet => {
+                const li = document.createElement('li');
+                // Using innerHTML to preserve the bolding tags (<b>) already in the data
+                li.innerHTML = bullet; 
+                bulletList.appendChild(li);
+            });
+
+            // Update Active Styling
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.classList.remove('active');
+                item.classList.remove('bg-blue-200', 'border-blue-700');
+                item.classList.add('bg-white', 'border-gray-300');
+                item.setAttribute('data-is-active', 'false');
+            });
+            
+            const newActive = document.querySelector(`.timeline-item[data-role-id="${roleId}"]`);
+            if (newActive) {
+                newActive.classList.add('active');
+                newActive.classList.add('bg-blue-200', 'border-blue-700');
+                newActive.classList.remove('bg-white', 'border-gray-300');
+                newActive.setAttribute('data-is-active', 'true');
+            }
+            
+            currentActiveRole = roleId;
+        }
+
+        // --- Tab Control ---
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.getElementById(tabId).style.display = 'block';
+
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active-tab');
+            });
+            document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active-tab');
+
+            // Re-render charts when their tab is opened
+            if (tabId === 'overview') { initRadarChart(); }
+            if (tabId === 'impact') { initImpactChart(); }
+        }
+
+        // --- Initialization ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initRadarChart();
+            initImpactChart();
+            initTimeline();
+
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    switchTab(e.target.closest('.tab-button').dataset.tab);
+                });
+            });
+
+            // Initial tab display
+            switchTab('overview');
+        });
+    </script>
+</body>
+</html>
